@@ -13,7 +13,68 @@ const rl = readline.createInterface({
 
 // the function that will be called by the unit test below
 const rockPaperScissors = (hand1, hand2) => {
+  let throw1 = hand1.trim().toLowerCase();
+  let throw2 = hand2.trim().toLowerCase();
+  console.log(throw1 + " vs " + throw2)
+  // if (throw1 === throw2) {
+  //     return "It's a tie!"
+  //   } else if (throw1 === "rock" && throw2 === "scissors") {
+  //     return "Hand one wins!"
+  //   } else if (throw1 === "rock" && throw2 === "paper") {
+  //     return "Hand two wins!"
+  //   } else if (throw1 === "paper" && throw2 === "rock") {
+  //     return "Hand one wins!"
+  //   } else if (throw1 === "paper" && throw2 === "scissors") {
+  //     return "Hand two wins!"
+  //   } else if (throw1 === "scissors" && throw2 === "paper") {
+  //     return "Hand one wins!"
+  //   } else if (throw1 === "scissors" && throw2 === "rock") {
+  //     return "Hand two wins!"
+  //   } else {
+  //     return "Invalid option given. Have you ever played this before?"
+  //   }
 
+  if (throw1 === throw2) {
+      return "It's a tie!"
+    } else if (throw1 === "rock" && throw2 === "scissors" || throw1 === "paper" && throw2 === "rock" || throw1 === "scissors" && throw2 === "paper") {
+      return "Hand one wins!"
+    } else if (throw1 === "rock" && throw2 === "paper" || throw1 === "paper" && throw2 === "scissors" || throw1 === "scissors" && throw2 === "rock") {
+      return "Hand two wins!"
+    } else {
+      return "Invalid option given. Have you ever played this before?"
+    }
+
+  // if (throw1 === throw2) {
+  //   return "It's a tie!"
+  //   } else if (throw1 === "rock") {
+  //     if (throw2 === "scissors") {
+  //       return "Hand one wins!"
+  //     } else if (throw2 === "paper") {
+  //       return "Hand two wins!"
+  //     } else {
+  //       return "Invalid option given by Player 2. Have you ever played this before?"
+  //     }
+  //   } else if (throw1 === "paper") {
+  //     if (throw2 === "rock") {
+  //       return "Hand one wins!"
+  //     } else if (throw2 === "scissors") {
+  //       return "Hand two wins!"
+  //     } else {
+  //       return "Invalid option given by Player 2. Have you ever played this before?"
+  //     }
+  //   } else if (throw1 === "scissors") {
+  //     if (throw2 === "paper") {
+  //       return "Hand one wins!"
+  //     } else  if (throw2 === "rock") {
+  //       return "Hand two wins!"
+  //     } else {
+  //       return "Invalid option given by Player 2. Have you ever played this before?"
+  //     }
+  //   } else {
+  //     return "Invalid option given by Player 1. Have you ever played this before?"
+  //   }
+
+  
   // Write code here
   // Use the unit test to see what is expected
 
