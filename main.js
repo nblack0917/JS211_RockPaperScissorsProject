@@ -40,6 +40,8 @@ const rockPaperScissors = (hand1, hand2) => {
       return "Hand one wins!"
     } else if (throw1 === "rock" && throw2 === "paper" || throw1 === "paper" && throw2 === "scissors" || throw1 === "scissors" && throw2 === "rock") {
       return "Hand two wins!"
+    } else if (throw1 === "" || throw2 === "" ) {
+      return "Each player must thow a hand. Please try again."
     } else {
       return "Invalid option given. Have you ever played this before?"
     }
@@ -113,6 +115,15 @@ if (typeof describe === 'function') {
       assert.equal(rockPaperScissors('rOcK', ' paper '), "Hand two wins!");
       assert.equal(rockPaperScissors('Paper', 'SCISSORS'), "Hand two wins!");
       assert.equal(rockPaperScissors('rock ', 'sCiSsOrs'), "Hand one wins!");
+    });
+    it('should thrown an error message if no input is given', () => {
+      assert.equal(rockPaperScissors('rOcK', ''), "Each player must thow a hand. Please try again.");
+      assert.equal(rockPaperScissors('', 'SCISSORS'), "Each player must thow a hand. Please try again.");
+    });
+    it('should detect if an invalid input was given', () => {
+      assert.equal(rockPaperScissors('rOcK', ' sword '), "Invalid option given. Have you ever played this before?");
+      assert.equal(rockPaperScissors('turtle', 'SCISSORS'), "Invalid option given. Have you ever played this before?");
+      assert.equal(rockPaperScissors('rock ', 'sCiSOrs'), "Invalid option given. Have you ever played this before?");
     });
   });
 } else {
